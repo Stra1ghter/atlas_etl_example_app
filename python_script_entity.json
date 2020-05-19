@@ -1,0 +1,42 @@
+{
+  "entities": [
+	{
+
+      		"typeName":"python_script",
+      		"createdBy": "admin",
+      		"attributes": {
+			"qualifiedName": "windpark/etl_script",
+			"name": "ETL script",
+			"uri": "some:uri",
+			"description": "The ETL script to transfer data",
+			"run_by_user": "root",
+			"inputs": [
+				"typeName": "web_api",
+				"guid": "-100"
+			],
+			"outputs": [
+				"typeName": "hbase_table",
+				"guid":	"-200"
+			]
+      		}
+    	}
+  ],
+  "referredEntities": {
+	"-100": {
+            "guid": "2946676e-d9ee-4981-97c0-1621689af25d",
+            "typeName": "web_api",
+	    "attributes": {
+	    	"name": "Engie Open Data Web API"
+	    }
+	},
+ 	"-200": {
+		"typeName": "hbase_table",	
+		"guid":	"43b2e17e-20cc-4af6-b586-d91cee67752c",
+		"attributes": {
+                	"name": "static_information",
+			"owner": "opc",
+			"qualifiedName": "windpark/static_information"
+		}
+	}
+  }
+}

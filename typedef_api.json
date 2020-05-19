@@ -1,0 +1,23 @@
+{
+  "entityDefs" : [
+    {
+      "superTypes" : [ "DataSet" ],
+      "category" : "ENTITY",
+      "name" : "web_api",
+      "description" : "a type defintion for a web api",
+      "typeVersion" : "1.0",
+      "attributeDefs" : [
+        {
+          "name" : "base_url",
+          "typeName" : "string",
+          "isOptional" : false,
+          "cardinality" : "SINGLE",
+          "valuesMinCount" : 1,
+          "valuesMaxCount" : 1,
+          "isUnique" : true,
+          "isIndexable" : true
+        }
+      ]
+    }
+  ]
+}
