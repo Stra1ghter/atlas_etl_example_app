@@ -1,7 +1,7 @@
 {
   "entityDefs" : [
     {
-      "superTypes" : [ "DataSet" ],
+      "superTypes" : [ "Asset" ],
       "category" : "ENTITY",
       "name" : "web_api",
       "description" : "a type defintion for a web api",

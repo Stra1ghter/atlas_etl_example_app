@@ -1,15 +1,12 @@
 {
-  "entities": [
-    {
-      "typeName": "web_api",
-      "createdBy": "admin",
-      "guid": -42,
-      "attributes": {
-        "qualifiedName": "windpark/web_api",
-        "base_url": "https://opendata-renewables.engie.com/api/",
-	"name":"Engie Open Data Web API",
-	"description": "The API to access the latest windpark data"
-      }
+    "entity": {
+        "attributes": {
+            "base_url": "https://opendata-renewables.engie.com/api/",
+            "description": "The API to access the latest windpark data",
+            "name": "Engie Open Data Web API",
+            "owner": "opc",
+            "qualifiedName": "windpark/web_api"
+        }
     }
-	]
 }
+
