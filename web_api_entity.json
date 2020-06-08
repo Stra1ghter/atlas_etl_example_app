@@ -1,5 +1,6 @@
 {
     "entity": {
+	"typeName": "web_api",
         "attributes": {
             "base_url": "https://opendata-renewables.engie.com/api/",
             "description": "The API to access the latest windpark data",

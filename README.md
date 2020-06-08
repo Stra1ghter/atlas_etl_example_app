@@ -43,5 +43,20 @@ curl -u $ATLAS_USER:$ATLAS_PASSWORD -X GET -H 'Content-Type: application/json' -
 Der Python-Script-Typ kann mit dem gleichen Aufruf, wie der des Web-API-Typs, erzeugt werden. Der JSON-Inhalt des Data Parameters von cURL (-d) muss entsprechend auf die andere Datei abgeändert werden.
 
 ## Entitäten erzeugen
-Entiäten kön
+Entitäten können über den ```/v2/entity```-Endpunkt angelegt werden.
 
+**Web-API-Entität erzeugen:**
+```
+curl -u $ATLAS_USER:$ATLAS_PASSWORD -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/entity" -d "@./web_api_entity.json"
+```
+
+**Beispiel-GET-Request um nach der erzeugten Entität zu suchen:**
+```
+curl -u $ATLAS_USER:$ATLAS_PASSWORD -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/search/basic?query=Engie&limit=10"
+```
+
+Um mehrere Entitäten gleichzeitig zu erzeugen, ist der Bulk-Endpoint nutzbar.
+**Python-Script-Entität erzeugen (die referenzierten GUIDs müssen zuvor auf schon angelegte Entitäten geändert werden):**
+```
+curl -u $ATLAS_USER:$ATLAS_PASSWORD -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/entity/bulk" -d "@./python_script_entity.json"
+```
