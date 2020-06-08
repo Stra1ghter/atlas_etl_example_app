@@ -1,5 +1,6 @@
 # Atlas REST-API Beispiele
 Um die Beispiele korrekt zu verwenden ist eine Linux-Shell (z.B. Bash), cURL und Python erforderlich.
+Die Beispiele verwenden die aktuelle v2-Version der REST-API. 
 
 ## Umgebungsvariablen
 Um die Aufrufe richtig nutzen zu können, sollten zunächst die richtigen Umgebungsvariablen auf der Shell gesetzt werden. Folgende Umgebungsvariablen sind um die korrekten Werte für das spezifische Atlas-System zu ersetzen.
@@ -18,9 +19,14 @@ Um die JSON-Resultate lesbar zu durchsuchen, empfiehlt es sich die Antworten der
 ```
 curl -u $ATLAS_USER:$ATLAS_PASSWORD -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/types/typedefs"
 ```
-**Vorhandene Entitäten im System:**
+**Vorhandene Entitäten im System suchen:**
 ```
-curl -u $ATLAS_USER:$ATLAS_PASSWORD -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/entity/bulk"
+curl -u $ATLAS_USER:$ATLAS_PASSWORD -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/search/basic?query=*&limit=10"
 ```
 
 ## Typen erzeugen
+**Web-API-Typ erzeugen:**
+```
+curl -u $ATLAS_USER:$ATLAS_PASSWORD -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/types/typedefs" -d "@./typedef_api.json"
+```
+
