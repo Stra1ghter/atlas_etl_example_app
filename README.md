@@ -4,7 +4,7 @@ Die Beispiele verwenden die aktuelle v2-Version der REST-API.
 
 
 ## Umgebungsvariablen
-Um die Aufrufe richtig nutzen zu können, sollten zunächst die richtigen Umgebungsvariablen auf der Shell gesetzt werden. Folgende Umgebungsvariablen sind um die korrekten Werte für das spezifische Atlas-System zu ersetzen.
+Um die Aufrufe richtig nutzen zu können, sollten zunächst auf die richtigen Umgebungsvariablen in der Shell abgeändert werden. Folgende Umgebungsvariablen sind um die korrekten Werte für das spezifische Atlas-System zu ersetzen.
 ```
 ATLAS_BASE_URL=http://10.50.14.232:21000/api/atlas/v2
 ATLAS_USER=admin
@@ -12,13 +12,13 @@ ATLAS_PASSWORD=admin
 ```
 
 
-## GET-Requets
+## Atlas durchsuchen 
 Um die JSON-Resultate lesbar zu durchsuchen, empfiehlt es sich die Antworten der jeweiligen Request per Pipe an das ```json.tool```-Modul und ```grep``` weiterzuleiten. Die Anfragen sollten also nach folgendem Format aufgebaut sein: 
 ```
 <request> | python -m json.tool | grep -B 3 -A 3 <regex>
 ```
 
-**Verfügbare Typdefinitionen**:
+**Verfügbare Typdefinitionen auflisten**:
 ```
 curl -u $ATLAS_USER:$ATLAS_PASSWORD -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/types/typedefs"
 ```
