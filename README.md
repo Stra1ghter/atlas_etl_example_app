@@ -56,6 +56,7 @@ curl -u $ATLAS_USER:$ATLAS_PASSWORD -X GET -H 'Content-Type: application/json' -
 ```
 
 Um mehrere Entitäten gleichzeitig zu erzeugen, ist der ```/v2/entity/bulk```-Endpoint nutzbar.
+
 **Python-Script-Entität erzeugen (die referenzierten GUIDs müssen zuvor auf schon angelegte Entitäten geändert werden):**
 ```
 curl -u $ATLAS_USER:$ATLAS_PASSWORD -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' "$ATLAS_BASE_URL/entity/bulk" -d "@./python_script_entity.json"
